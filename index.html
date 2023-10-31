@@ -1,0 +1,97 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="ico" href="../../images/logo/logo_turismo_para_todos.ico" type="image/png">
+    <link rel="stylesheet" href="../../pluggins/fontawesome/css/all.css">
+    <link rel="stylesheet" href="../../pluggins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../pluggins/jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" href="../../pluggins/three-dots-master/dist/three-dots.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/contact.css">
+    <script src="../../pluggins/fontawesome/js/all.js"></script>    
+    <script src="../../pluggins/jquery-3.6.0.min.js"></script>
+    <script src="../../pluggins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../pluggins/jquery-ui/jquery-ui.js"></script>
+    <script src="../../pluggins/scroll-utility.js"></script>
+    <script src="../../js/header.js"></script>
+    <script src="../../js/translate.js"></script>
+    <title>Turismo Para Todos</title>
+</head>
+    <header>
+        <aside class="header">
+            <aside class="banner">
+                <img src="../../images/banner/costa-rica-playas.jpg" alt="">
+            </aside>
+            <aside class="title">
+                <img src="../../images/logo/logo_turismo_para_todos.png" alt="">
+                <h3>Turismo Para Todos</h3>
+            </aside>
+        </aside>
+    </header>
+    <nav class="navbar">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </nav>
+    <aside class="menu">
+        <aside class="contentMenu">
+            <ul>
+                <li class="nav-link index">
+                    <a href="./">Inicio</a>
+                </li>
+                <li class="nav-link promo">
+                    <a href="promotion">Promociones</a>
+                </li>
+                <li class="nav-link gallery">
+                    <a href="gallery">Galería</a>
+                </li>
+                <li class="nav-link us">
+                    <a href="about_us">Nosotros</a>
+                </li>
+                <li class="nav-link contact" data-toggle="modal" data-target="#contactModal">
+                    <a href="#">Contáctenos</a>
+                </li>
+            </ul>
+            <aside class="contentFlag">
+                <span class="flag flagSpanish"></span>
+                <span class="flag flagEnglish"></span>
+                <span class="flag flagFrench"></span>
+                <span class="flag flagGerman"></span>
+            </aside>
+        </aside>
+    </aside>
+    <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">Contáctenos</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="tbName" placeholder="Nombre">
+                    <input type="phone" class="tbPhone" placeholder="###############">
+                    <input type="email" class="tbEmail" placeholder="Correo electrónico">
+                    <textarea class="txtMessage" placeholder="Ingrese su mensaje"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <div id="modalImage" class="modalImage">        
+        <span class="close closeImage">&times;</span>        
+        <img class="modalImage-content" id="img01">        
+        <div id="caption"></div>
+    </div>
+    <aside class="contentBtnUp">
+        <span class="btn">
+            <i class="fa-solid fa-circle-arrow-up"></i>
+        </span>
+    </aside>
+</html>

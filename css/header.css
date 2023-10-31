@@ -1,0 +1,386 @@
+@font-face {
+    font-family: 'Rocher';
+    src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+}
+@font-palette-values --Rocher {
+    font-family: Rocher;
+    base-palette: 0;
+}
+*{
+    transition: .25s ease-in-out;
+}
+h3{
+    font-palette: --Rocher;
+}
+body{
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body.blockScroll{
+    overflow-y: hidden;
+}
+header, header .header{
+    width: 100%;
+    height: 350px;
+    position: relative;
+    z-index: 2;
+    top: 0;
+    box-shadow: 0px 5px 15px 0px gray;
+}
+header.sticky, header.sticky .header{
+    height: 200px;
+}
+.header .banner img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0px -90px;    
+}
+header .header .title{
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    display: flex;
+    top: 100px;
+    background-color: #ffffff5e;
+    box-shadow: 0px 0px 5px 0px black;    
+}
+header.sticky .header .title{
+    height: 75px;
+    top: 60px;
+}
+.header .title img{
+    position: relative;
+    left: 200px;
+    top: -70px;
+    width: 180px;
+    height: 180px;    
+}
+.header.sticky .title img{
+    top: -60px;
+    width: 140px;
+    height: 140px;
+}
+.header .title h3{
+    position: relative;
+    margin: 0;
+    top: 10px;
+    left: 250px;
+    width: 185px;
+    font-size: 32px;
+    font-palette: --Rocher;
+    font-family: 'Rocher';
+    color: white;
+    text-shadow: 0px 0px 10px black;    
+}
+.header.sticky .title h3{
+    top: 0px;
+}
+.navbar{
+    position:absolute;
+    width: fit-content;        
+    display: block;    
+    top: 10px;
+    left: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.36);
+    z-index: 2;
+    box-shadow: 0px 0px 10px 0px burlywood, inset 0px 0px 0px 0px burlywood;
+}
+.navbar:hover{
+    box-shadow: 0px 0px 10px 0px burlywood, inset 0px 0px 100px 0px burlywood;
+}
+.navbar.active{
+    border-radius: 100px;
+    z-index: 4;
+}
+.navbar .bar{
+    width: 30px;
+    height: 5px;
+    margin: 4px;
+    opacity: 100%;
+    visibility: visible;
+    display: block;
+    background-color: black;    
+}
+.navbar:hover .bar{
+    background-color: brown;
+}
+.navbar.active .bar:first-child,
+.navbar.active .bar:last-child{
+    opacity: 0%;
+    visibility: hidden;    
+}
+.navbar.active .bar:nth-child(2){
+    transform: rotate(50deg) translate(3px, 3px);
+}
+.navbar.active .bar:nth-child(3){
+    transform: rotate(-50deg) translate(3px, -3px);
+}
+.menu{
+    position: absolute;
+    top: 0px;
+    opacity: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.593);
+    z-index: 3;
+    visibility: hidden;
+}
+.menu.active{
+    opacity: 100%;
+    visibility: visible;
+}
+.menu .contentMenu{
+    position: relative;
+    width: 300px;
+    height: 100%;
+    left: -100%;
+    border-start-end-radius: 10px;
+    border-end-end-radius: 10px;
+    background-color: cornsilk;
+    box-shadow: 0px 0px 10px 0px brown;
+    transition: 1s ease-in-out;
+}
+.menu.active .contentMenu{
+    left: 0%;    
+}
+.menu .contentMenu ul{
+    position: relative;
+    width: 100%;
+    height: 45vh;
+    top: 80px;
+    list-style: none;
+    margin: 0%;
+    padding: 0%;
+}
+.menu .contentMenu ul li{    
+    margin: 5px 0px 5px 5px;
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(0.25turn,black 0%, chocolate 100%);
+    border-image-slice: 1;
+    cursor: pointer;
+}
+.menu .contentMenu ul li:hover,
+.menu .contentMenu ul li.active{
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(0.25turn, black 0%, chocolate 30px);
+    border-image-slice: 1;
+}
+.menu .contentMenu ul li a{
+    text-decoration:none;
+    color: gray;
+    font-weight: 600;
+    font-size: 18px;        
+}
+.menu .contentMenu ul li:hover a,
+.menu .contentMenu ul li.active a{
+    color: chocolate;
+}
+.menu .contentFlag{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    position: relative;
+}
+.menu .contentFlag .flag{
+    border-radius: 100%;
+    box-shadow:0px 0px 10px 0px gray;
+    width: 30px;
+    height: 30px;
+    margin:auto 10px;
+    background-position: center;    
+    background-size: cover;
+    cursor:pointer;
+    visibility: visible;
+    display: block;
+    transform:scale(1);
+}
+.menu .contentFlag .flag.inactive{
+    visibility: hidden;
+    display: none;
+}
+.menu .contentFlag .flag:hover{
+    transform:scale(1.2);
+    box-shadow:0px 0px 10px 0px black;
+}
+.contentFlag .flag.flagSpanish{
+    background-image: url("../images/otros/spanish.png");
+}
+.contentFlag .flag.flagEnglish{
+    background-image: url("../images/otros/english.jpeg");
+}
+.contentFlag .flag.flagFrench{
+    background-image: url("../images/otros/french.jpeg");
+}
+.contentFlag .flag.flagGerman{
+    background-image: url("../images/otros/german.jpeg");
+}
+.modalImage {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+}    
+.modalImage-content {
+    margin: auto;
+    display: block;
+}
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}    
+.modalImage-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+.contentBtnUp .btn{
+    font-size: 24px;
+    color: brown;
+    background-color: white;
+    box-shadow: 0px 0px 5px 2px black;
+    padding: 0px;
+    border-radius: 100%;
+    position: fixed;
+    right: 40px;
+    bottom: 20px;
+    z-index: 1;
+    transform: scale(0);  
+    opacity: 0%;
+    transition: 1s ease-in-out !important;  
+    visibility: hidden;
+}
+.contentBtnUp .btn.appear{
+    visibility: visible;
+    opacity: 100%;    
+    transform: scale(1);
+    animation-name: increaseBtnAppear;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 5;
+}
+.contentBtnUp .btn:hover{
+    animation: increaseBtn 2s infinite;
+}
+main{
+    width: 100%;    
+    margin: 50px auto 150px auto;
+}
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+@keyframes increaseBtn{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1.05);
+    }
+}
+@keyframes increaseBtnAppear{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1.05);
+    }
+}
+@media screen and (max-width:1200px) {
+    header, header .header{
+        height: 250px;
+    }
+    header .header .title{
+        top: 65px;
+    }
+}
+@media screen and (max-width:1150px) {
+    .header .title h3{
+        left: 100px;
+    }
+    .header .title img{
+        left: 50px;
+    }
+}
+@media screen and (max-width:1000px){
+    .header .banner img{
+        object-position: 0px -35px;
+    }
+}
+@media screen and (max-width:900px){
+    .header .title h3{
+        font-size: 26px;
+        width: 160px;
+        top: 20px;
+    }
+    .header .title img{
+        width: 140px;
+        height: 140px;
+        top: -35px;
+    }
+}
+@media screen and (max-width:700px) {
+    header, header .header{
+        height: 200px;
+    }
+    header .header .title{
+        top: 40px;
+    }
+    .header .title h3{
+        left: 30px;
+    }
+    .header .title img{
+        left: 25px;
+    }
+    .modalImage-content {
+        width: 100%;
+    }
+}
+@media screen and (max-width:400px) {
+    .header .title img{
+        width: 100px;
+        height: 100px;
+        top: -10px;
+        left: 10px;
+    }
+}

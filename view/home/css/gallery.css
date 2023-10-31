@@ -1,0 +1,84 @@
+.head{
+    width: 100%;
+    padding: 25px;
+    display: block;
+}
+.head h3{
+    text-shadow: 0px 0px 1px gray;
+    width: fit-content;
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(0.25turn, black 0%, brown 50%);
+    border-image-slice: 1;
+}
+.gallery{
+    width: 100%;
+    padding: 25px;
+    overflow: auto;
+    display: inline-flex;
+}
+.gallery .boxGallery{
+    width: 350px;
+    height: 350px;
+    margin: auto 25px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0px black;    
+    cursor: pointer;
+    overflow: hidden;
+}
+.boxGallery .galleryContent{
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+.boxGallery .galleryFoot{
+    width: 100%;
+    height:100%;
+    padding:10px;
+    text-align:center;
+    background-image: linear-gradient(0turn,brown 20%,cornsilk 100%);
+}
+.boxGallery .galleryFoot h3{
+    text-shadow:0px 0px 2px gray;
+}
+.gallery .boxGallery img{
+    width: 100%;
+    height:100%;
+    object-fit:cover;    
+}
+#modalImage #img01{
+    opacity: 100%;
+    width: 55%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+#modalImage #img01.change{
+    opacity:0%;
+}
+#modalImage .btnArrow{
+    cursor:pointer;
+    position: absolute;
+    top:45%;
+    font-size: 8vh;
+}
+#modalImage .btnArrow:hover{
+    color:white;    
+}
+#modalImage .btnArrow.prev{
+    left:20%;
+}
+#modalImage .btnArrow.next{
+    right:20%;
+}
+@media screen and (max-width:1000px){
+    .head h3{
+        margin: auto;
+    }
+}
+@media screen and (max-width:700px) {
+    .gallery{
+        display: block;
+    }
+    .gallery .boxGallery{
+        margin:25px auto;
+    }
+}

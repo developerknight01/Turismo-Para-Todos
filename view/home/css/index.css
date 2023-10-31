@@ -1,0 +1,201 @@
+main .carousel{
+    width: 100%;
+    height: 70%;
+    overflow: hidden;
+}
+.carousel img{
+    position: absolute;
+    object-position: 0px -250px;
+    width: 100%;    
+    opacity: 100%;    
+    z-index: 1;
+    transition: 1s ease-in-out !important;
+}
+.carousel img.inactive{
+    opacity: 0%;            
+}
+.promotion{
+    width: 100%;
+    height: 1000px;
+    padding: 25px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.promotion h3{
+    margin: 25px auto 50px auto;
+    width: fit-content;
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(0.25turn, brown 0%, chocolate 50%, brown 120%);
+    border-image-slice: 1;
+    text-shadow: 0px 0px 2px gray;
+}
+.promotion .pack{
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 150px;    
+    margin: auto;
+    display: inline-flex;
+    visibility: visible;
+    opacity: 100%;
+}
+.promotion .pack.inactive{
+    visibility: hidden;
+    opacity: 0%;
+}
+.promotion .pack .imgPromotion,
+.promotion .pack .descriptionPromotion{
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+}
+.promotion .pack .imgPromotion img{
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px 0px deepskyblue;
+    animation: highBox 3s infinite ease-in-out;
+}
+.promotion .pack .descriptionPromotion{
+    padding: 25px;    
+    font-size: 20px;
+}
+.promotion .pack .descriptionPromotion p{
+    width: 500px;
+    text-align: justify;
+}
+.promotion .btnCarousel{
+    position: absolute;
+    font-size: 8vh;
+    top: 45%;
+    color: gray;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1;
+    opacity: 50%;
+}
+.promotion .btnCarousel:hover{
+    color:black;
+    opacity: 100%;
+}
+.promotion .btnCarousel.left{
+    left: 0;
+}
+.promotion .btnCarousel.right{
+    right: 0;
+}
+.promotion .promoFoot{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 50px;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+}
+.promotion .promotionDot{
+    background-color: gray;
+    box-shadow: 0px 0px 2px 1px black;    
+    position: relative;
+    display: inline-flex;
+    margin: 10px;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.promotion .promotionDot.active,
+.promotion .promotionDot:hover{
+    background-color: coral;
+}
+.partner{
+    width: 100%;
+    height: 400px;
+    position: relative;
+    margin: 25px auto 150px auto;
+}
+.partner h3{
+    margin: 25px auto 50px auto;
+    width: fit-content;
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(0.25turn, brown 0%, chocolate 50%, brown 120%);
+    border-image-slice: 1;
+    text-shadow: 0px 0px 2px gray;
+}
+.partner .partnerBanner{
+    width: 100%;
+    margin: 50px auto;            
+    padding: 2em 2em;    
+}
+.partner .partnerBanner .partnerBannerTrack{
+    width: 100%;
+    display: flex;
+    gap: 10em;
+    overflow: hidden;
+}
+.partner .partnerBanner img{
+    width: 300px;
+    height: 150px;    
+    animation: scrollLogo 35s linear infinite;
+}
+@keyframes scrollLogo {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-450%);
+    }
+}
+@keyframes highBox {
+    0%{
+        box-shadow: 0px 0px 15px 0px deepskyblue;
+    }
+    50%{
+        box-shadow: 0px 0px 18px 2px deepskyblue;
+    }
+    100%{
+        box-shadow: 0px 0px 15px 1px deepskyblue;
+    }
+}
+@media screen and (max-width:1200px){
+    .carousel img{
+        object-position: 0px -100px;
+    }
+    .promotion .pack .descriptionPromotion p{
+        width: 250px;
+    }
+}
+@media screen and (max-width:815px) {
+    main .carousel{
+        height: 50%;
+    }
+    .promotion .pack .imgPromotion img{
+        width: 250px;
+    }
+}
+@media screen and (max-width:680px) {
+    .promotion{
+        height: 1350px;
+    }
+    .promotion .pack{        
+        display: block;
+    }
+    .promotion .pack .imgPromotion img{
+        width: 300px;
+    }
+    .promotion .pack .descriptionPromotion p{
+        width: 100%;
+    }
+}
+@media screen and (max-width:600px) {
+    main .carousel{
+        height: 40%;
+    }
+    .carousel img{
+        object-position: 0px 0px;
+    }
+}

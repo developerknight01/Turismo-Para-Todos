@@ -1,0 +1,44 @@
+
+main .tablePromo{
+    width: 100%;
+    padding: 25px;
+    overflow: auto;
+}
+.tablePromo table{
+    width: 170vh;
+}
+.tablePromo table tbody tr td:nth-child(1){
+    text-align: center;
+}
+.tablePromo table tbody tr td:nth-child(2){
+    width: 500px;
+}
+.tablePromo table img{
+    width: 250px;
+}
+.tablePromo table b{
+    font-size: 24px;
+}
+.tablePromo table p{
+    width: 100%;
+    font-size: 20px;
+    text-align: justify;
+}
+.tablePromo table label{
+    font-size: 20px;
+}
+.tablePromo table .btnIco{
+    display: inline-flex;
+    width: fit-content;
+    font-size: 26px;
+    margin: auto 10px;
+    color: gray;
+    cursor: pointer;
+    transition: .25s ease-in-out;
+}
+.tablePromo table .btnIco.btnWhatsapp:hover{
+    color: green;
+}
+.tablePromo table .btnIco.btnPhone:hover{
+    color: blue;
+}
